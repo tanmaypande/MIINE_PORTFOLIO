@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PROJECTS</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+    padding: 40px;
+    background: linear-gradient(135deg, #e6f0ff 50%, #0a192f 50%);
+    min-height: 100vh;
+}
+
+/* HEADINGS */
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* HEADER */
+thead {
+    background: #0a192f;
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* BODY CELLS */
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ROW HOVER */
+tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: white;
+    background: #2563eb;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+a:hover {
+    background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+        background: #e6f0ff;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none; /* hide header */
+    }
+
+    tr {
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    td {
+        border: none;
+        padding: 10px;
+        position: relative;
+    }
+
+    td::before {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    td:nth-child(1)::before { content: "Project"; }
+    td:nth-child(2)::before { content: "Description"; }
+    td:nth-child(3)::before { content: "Link"; }
+}
+</style>
+</head>
+<body>
+    <h1>PROJECTS</h1>
+    <h5>These are some of the projects I have worked on, showcasing my skills in Artificial Intelligence, Machine Learning, and Web Development. Each project reflects my ability to solve real-world problems and build efficient, user-focused applications.</h5>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>Project name</th>
+            <th>Description</th>
+            <th>GitHub link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Expense tracker</td>
+            <td>used to track monthly expenses
+                and set monthly limit
+            </td>
+            <td><a href="https://github.com/tanmaypande/EXPENSE_TRACKER_" target="_blank">project link</a></td>
+        </tr>
+        <tr>
+            <td>Ai resume analyzer </td>
+            <td>WORKING ON IT...</td>
+            <td>soon..</td>
+        </tr>
+    </tbody>
+    </table>
+</body>
+</html>
