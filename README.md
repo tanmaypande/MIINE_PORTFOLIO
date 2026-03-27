@@ -32,7 +32,7 @@ I am an aspiring AI/ML Engineer and Web Developer passionate about building inte
 ---
 
 ## 🔹 Live Demo
-👉 https://your-site-name.netlify.app/
+👉 https://tanmayyyportfolio.netlify.app/
 
 ---
 
@@ -42,9 +42,9 @@ I am an aspiring AI/ML Engineer and Web Developer passionate about building inte
 ---
 
 ## 🔹 Connect with Me
-- LinkedIn: https://www.linkedin.com/in/your-link
+- LinkedIn: https://www.linkedin.com/in/tanmay-pandey-721203338/
 - GitHub: https://github.com/your-username
-- Email: your-email@gmail.com
+- Email: tanmaypandey4243@gmail.com
 
 ---
 
