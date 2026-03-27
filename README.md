@@ -37,13 +37,13 @@ I am an aspiring AI/ML Engineer and Web Developer passionate about building inte
 ---
 
 ## 🔹 GitHub Repository
-👉 https://github.com/your-username/your-repo
+👉https://github.com/tanmaypande/MIINE_PORTFOLIO
 
 ---
 
 ## 🔹 Connect with Me
 - LinkedIn: https://www.linkedin.com/in/tanmay-pandey-721203338/
-- GitHub: https://github.com/your-username
+- GitHub: https://github.com/tanmaypande
 - Email: tanmaypandey4243@gmail.com
 
 ---
