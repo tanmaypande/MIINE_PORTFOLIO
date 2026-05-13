@@ -608,6 +608,162 @@
         .cert-info ul li::marker {
             color: #2563eb;
         }
+
+        /* NEW SECTIONS CSS */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .content-section {
+            padding: 80px 80px;
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-section.align-center {
+            align-items: center;
+            text-align: center;
+        }
+
+        .content-section.dark-bg {
+            background: rgba(10, 25, 47, 0.6);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .content-section .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .content-section p.section-text {
+            color: #cbd5e1;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding-left: 30px;
+            border-left: 3px solid #2563eb;
+            text-align: left;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -42px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #0a192f;
+            border: 3px solid #38bdf8;
+            transition: background 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            background: #38bdf8;
+        }
+
+        .timeline-item h3 {
+            color: #38bdf8;
+            font-size: 22px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .timeline-item h4 {
+            color: #e2e8f0;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .timeline-item p {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .skill {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.4);
+            color: #60a5fa;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .skill.show {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .skill:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 50px 20px;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .timeline-item::before {
+                left: -33px;
+            }
+
+            .content-section .section-title {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -615,17 +771,20 @@
 
     <!-- Navbar -->
     <nav>
-        <a href="portfolio.html" class="logo">TP</a>
+        <a href="#home" class="logo">TP</a>
         <ul>
-            <li><a href="about.html">About me</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html" class="btn">Contact Me</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Certifications</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact" class="btn">Contact</a></li>
         </ul>
     </nav>
 
 
-    <section class="main">
+    <section class="main" id="home">
         <div class="left">
             <h5>Hi, I am</h5>
             <h1>Tanmay <span>Pandey</span></h1>
@@ -647,6 +806,93 @@
 
         <div class="right">
             <img src="tanmay.png" alt="Tanmay">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="content-section align-center dark-bg" id="about">
+        <h1 class="section-title">About <span>Me</span></h1>
+        <p class="section-text scroll-reveal">
+            I am a passionate AI/ML developer and web enthusiast dedicated to building intelligent solutions and dynamic
+            web experiences. With a strong foundation in machine learning algorithms and full-stack development, I
+            strive to create impactful and innovative applications. My journey is fueled by continuous learning and a
+            drive to solve real-world problems through technology.
+        </p>
+    </section>
+
+    <!-- Education Section -->
+    <section class="content-section" id="education">
+        <h1 class="section-title">My <span>Education</span></h1>
+        <div class="timeline">
+            <div class="timeline-item scroll-reveal">
+                <h3>Bachelor of Technology in Computer Science</h3>
+                <h4>University Name &bull; (2022 - 2026)</h4>
+                <p>Focusing on Artificial Intelligence and Machine Learning. Active member of technical clubs and
+                    participating in various hackathons and tech events. Consistently maintaining top academic
+                    performance while pursuing practical projects.</p>
+            </div>
+            <div class="timeline-item scroll-reveal">
+                <h3>High School / Secondary Education</h3>
+                <h4>School Name &bull; (Graduated 2022)</h4>
+                <p>Graduated with honors. Developed a strong interest in programming, mathematics, and analytical
+                    problem-solving, setting the foundation for my engineering career.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="content-section dark-bg" id="experience">
+        <h1 class="section-title">Work <span>Experience</span></h1>
+        <div class="timeline">
+            <div class="timeline-item scroll-reveal">
+                <h3>AI / ML Developer</h3>
+                <h4>Freelance & Personal Projects &bull; (2023 - Present)</h4>
+                <p>Designed and deployed various machine learning models, including predictive analytics and natural
+                    language processing pipelines. Continuously learning and implementing state-of-the-art algorithms.
+                </p>
+            </div>
+            <div class="timeline-item scroll-reveal">
+                <h3>Web Development Intern</h3>
+                <h4>Tech Solutions (Hypothetical) &bull; (Summer 2024)</h4>
+                <p>Worked on full-stack web applications, improving user experience and backend efficiency. Collaborated
+                    with a team of developers to deliver high-quality code and scalable solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="content-section align-center" id="projects">
+        <h1 class="section-title">My <span>Projects</span></h1>
+        <p class="section-text scroll-reveal">
+            Here are some of my recent projects. I build solutions focusing on AI, Machine Learning, and interactive web
+            applications.
+        </p>
+        <div
+            style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1000px; margin: 0 auto;">
+            <div class="scroll-reveal"
+                style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; width: 300px; text-align: left;">
+                <h3 style="color: #38bdf8; margin-bottom: 15px; font-size: 20px;">AI Chatbot</h3>
+                <p style="color: #94a3b8; font-size: 15px; margin-bottom: 20px; line-height: 1.6;">Developed an
+                    intelligent conversational agent using Natural Language Processing and deep learning techniques to
+                    assist users in real-time.</p>
+                <a href="#" style="color: #60a5fa; text-decoration: none; font-weight: 600;">View Project &rarr;</a>
+            </div>
+            <div class="scroll-reveal"
+                style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; width: 300px; text-align: left;">
+                <h3 style="color: #38bdf8; margin-bottom: 15px; font-size: 20px;">Predictive Analytics</h3>
+                <p style="color: #94a3b8; font-size: 15px; margin-bottom: 20px; line-height: 1.6;">Built a machine
+                    learning pipeline to analyze historical data and predict future trends with high accuracy using
+                    scikit-learn and pandas.</p>
+                <a href="#" style="color: #60a5fa; text-decoration: none; font-weight: 600;">View Project &rarr;</a>
+            </div>
+            <div class="scroll-reveal"
+                style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; width: 300px; text-align: left;">
+                <h3 style="color: #38bdf8; margin-bottom: 15px; font-size: 20px;">Portfolio Website</h3>
+                <p style="color: #94a3b8; font-size: 15px; margin-bottom: 20px; line-height: 1.6;">Designed and
+                    developed a fully responsive, single-page portfolio website with modern UI/UX principles and smooth
+                    scroll animations.</p>
+                <a href="#" style="color: #60a5fa; text-decoration: none; font-weight: 600;">View Project &rarr;</a>
+            </div>
         </div>
     </section>
 
@@ -693,8 +939,32 @@
         </div>
     </section>
 
+    <!-- Resume Section -->
+    <section class="content-section align-center dark-bg" id="resume">
+        <h1 class="section-title">My <span>Resume & Skills</span></h1>
+        <p class="section-text scroll-reveal">
+            Here are some of the technologies and tools I work with. Feel free to download my resume to get a
+            comprehensive overview of my academic background and technical expertise.
+        </p>
+        <div class="skills-container">
+            <span class="skill scroll-reveal">Python</span>
+            <span class="skill scroll-reveal">JavaScript</span>
+            <span class="skill scroll-reveal">Machine Learning</span>
+            <span class="skill scroll-reveal">Deep Learning</span>
+            <span class="skill scroll-reveal">React.js</span>
+            <span class="skill scroll-reveal">HTML & CSS</span>
+            <span class="skill scroll-reveal">SQL & MongoDB</span>
+            <span class="skill scroll-reveal">Git & GitHub</span>
+            <span class="skill scroll-reveal">Data Analysis</span>
+        </div>
+        <div class="resume-btn-container scroll-reveal" style="margin-top: 40px;">
+            <a href="#" class="btn"
+                style="font-size: 18px; padding: 15px 40px; display: inline-block; animation: none;">Download Resume</a>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-left">
             &copy; 2026 Tanmay Pandey. All rights reserved.
         </div>
