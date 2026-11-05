@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PROJECTS</title>
+    <title>Projects Archive | Tanmay Pandey</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -24,7 +24,7 @@
 
     body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background-color: #0B0F19;
+        background-color: #080D1A;
         color: #F8FAFC;
         min-height: 100vh;
         overflow-x: hidden;
@@ -32,6 +32,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         padding: 60px 24px;
+        position: relative;
     }
 
     /* Background grid */
@@ -43,9 +44,9 @@
         width: 100%;
         height: 100%;
         background-image:
-            linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-        background-size: 60px 60px;
+            linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+        background-size: 46px 46px;
         z-index: 0;
         pointer-events: none;
     }
@@ -57,21 +58,54 @@
         z-index: 1;
     }
 
+    .back-nav {
+        margin-bottom: 30px;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #38BDF8;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 16px;
+        background: rgba(19, 30, 51, 0.8);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 10px;
+        transition: all 0.25s ease;
+    }
+
+    .back-link:hover {
+        background: rgba(59, 130, 246, 0.15);
+        border-color: #38BDF8;
+        transform: translateX(-3px);
+    }
+
     /* ===== HEADING ===== */
     h1 {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-size: clamp(2.2rem, 4.5vw, 3rem);
         font-weight: 700;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         color: #F8FAFC;
         letter-spacing: -0.5px;
     }
 
-    h5 {
+    h1 .accent {
+        color: #38BDF8;
+        background: linear-gradient(135deg, #38BDF8, #60A5FA);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
         font-weight: 400;
         color: #94A3B8;
-        margin-bottom: 48px;
-        max-width: 700px;
+        margin-bottom: 40px;
+        max-width: 740px;
         font-size: 16px;
         line-height: 1.7;
     }
@@ -81,33 +115,34 @@
         width: 100%;
         border-collapse: separate;
         border-spacing: 0;
-        background: #151C2C;
+        background: #131E33;
         border-radius: 16px;
         overflow: hidden;
-        border: 1px solid #263247;
+        border: 1px solid #1F2D44;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
     }
 
     thead {
-        background: #111827;
+        background: #0E1626;
     }
 
     th {
         padding: 18px 24px;
         text-align: left;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 13px;
         color: #94A3B8;
         text-transform: uppercase;
         letter-spacing: 1px;
-        border-bottom: 1px solid #263247;
+        border-bottom: 1px solid #1F2D44;
     }
 
     td {
         padding: 20px 24px;
-        border-bottom: 1px solid rgba(38, 50, 71, 0.5);
+        border-bottom: 1px solid rgba(31, 45, 68, 0.6);
         font-size: 15px;
         color: #94A3B8;
-        vertical-align: top;
+        vertical-align: middle;
     }
 
     tbody tr:last-child td {
@@ -115,43 +150,57 @@
     }
 
     tbody tr {
-        transition: background 0.3s ease;
+        transition: background 0.25s ease;
     }
 
     tbody tr:hover {
-        background: rgba(59, 130, 246, 0.04);
+        background: rgba(59, 130, 246, 0.06);
     }
 
     td:first-child {
         color: #F8FAFC;
         font-weight: 600;
+        font-family: 'Space Grotesk', sans-serif;
     }
 
-    /* ===== LINKS ===== */
-    a {
+    /* ===== LINKS & BADGES ===== */
+    .project-link-btn {
         display: inline-flex;
         align-items: center;
         gap: 6px;
         text-decoration: none;
-        color: #F8FAFC;
-        background: #3B82F6;
+        color: #FFFFFF;
+        background: linear-gradient(135deg, #2563EB, #3B82F6);
         padding: 8px 18px;
         border-radius: 10px;
         font-size: 13px;
         font-weight: 600;
-        transition: all 0.3s ease;
+        transition: all 0.25s ease;
     }
 
-    a:hover {
-        background: #2563EB;
+    .project-link-btn:hover {
+        background: linear-gradient(135deg, #1D4ED8, #2563EB);
         transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.25);
+        box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+    }
+
+    .badge-wip {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 6px;
+        background: rgba(245, 158, 11, 0.15);
+        border: 1px solid rgba(245, 158, 11, 0.35);
+        color: #FBBF24;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
         body {
-            padding: 40px 16px;
+            padding: 35px 16px;
         }
 
         table, thead, tbody, th, td, tr {
@@ -170,15 +219,15 @@
         }
 
         tr {
-            background: #151C2C;
+            background: #131E33;
             border-radius: 14px;
             padding: 20px;
-            border: 1px solid #263247;
+            border: 1px solid #1F2D44;
             transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
         tr:hover {
-            border-color: rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.4);
             transform: translateY(-2px);
         }
 
@@ -191,7 +240,7 @@
             font-weight: 600;
             display: block;
             margin-bottom: 4px;
-            color: #3B82F6;
+            color: #38BDF8;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -199,7 +248,7 @@
 
         td:nth-child(1)::before { content: "Project"; }
         td:nth-child(2)::before { content: "Description"; }
-        td:nth-child(3)::before { content: "Link"; }
+        td:nth-child(3)::before { content: "Status / Link"; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -212,28 +261,41 @@
 </head>
 <body>
     <div class="container">
-        <h1>PROJECTS</h1>
-        <h5>These are some of the projects I have worked on, showcasing my skills in Artificial Intelligence, Machine Learning, and Web Development. Each project reflects my ability to solve real-world problems and build efficient, user-focused applications.</h5>
-        <table border="1">
+        <div class="back-nav">
+            <a href="index.html" class="back-link">
+                <span>&larr;</span> Back to Portfolio
+            </a>
+        </div>
+        <h1>PROJECTS <span class="accent">ARCHIVE</span></h1>
+        <p class="subtitle">These are the projects I have developed, showcasing my capabilities in Artificial Intelligence, Machine Learning, and Web Engineering. Each project reflects my drive to solve practical problems and build scalable, user-centric tools.</p>
+        <table>
         <thead>
             <tr>
                 <th>Project name</th>
                 <th>Description</th>
-                <th>GitHub link</th>
+                <th>Repository / Demo</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td> Expense tracker</td>
-                <td>used to track monthly expenses
-                    and set monthly limit
-                </td>
-                <td><a href="https://github.com/tanmaypande/EXPENSE_TRACKER_" target="_blank">project link</a></td>
+                <td>Add Expense Tracker</td>
+                <td>Personal expense tracker web app with monthly expenditure tracking, categorization, and configurable spending thresholds.</td>
+                <td><a href="https://github.com/tanmaypande/EXPENSE_TRACKER_" target="_blank" rel="noopener noreferrer" class="project-link-btn">GitHub Repo &rarr;</a></td>
             </tr>
             <tr>
-                <td>Ai resume analyzer </td>
-                <td>WORKING ON IT...</td>
-                <td>soon..</td>
+                <td>Login &amp; Logout Flask</td>
+                <td>Full-stack authentication system using Flask featuring session token management, protected routes, and user credentials security.</td>
+                <td><a href="https://github.com/tanmaypande/login-logout-flask" target="_blank" rel="noopener noreferrer" class="project-link-btn">GitHub Repo &rarr;</a></td>
+            </tr>
+            <tr>
+                <td>Portfolio Website</td>
+                <td>Modern, responsive single-page portfolio with dark mode, interactive resume preview modal, and smooth animations.</td>
+                <td><a href="https://github.com/tanmaypande/MIINE_PORTFOLIO" target="_blank" rel="noopener noreferrer" class="project-link-btn">GitHub Repo &rarr;</a></td>
+            </tr>
+            <tr>
+                <td>AI Resume Analyzer</td>
+                <td>Intelligent ATS resume parser and analyzer using machine learning to evaluate skill-to-job matching scores.</td>
+                <td><span class="badge-wip">In Development</span></td>
             </tr>
         </tbody>
         </table>
