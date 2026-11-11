@@ -774,10 +774,231 @@
             color: var(--text-secondary);
         }
 
+        .badge-status-completed {
+            font-size: 11px;
+            font-weight: 600;
+            color: #10B981;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            padding: 2px 9px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .timeline-details-block {
+            margin: 16px 0;
+            background: rgba(14, 22, 38, 0.65);
+            border: 1px solid rgba(59, 130, 246, 0.18);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+        }
+
+        .timeline-details-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 7px;
+        }
+
+        .timeline-bullet-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-bullet-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-size: 14px;
+        }
+
+        .timeline-tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 16px 0 20px 0;
+        }
+
+        .tech-badge {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-primary);
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 3px 10px;
+            border-radius: 6px;
+            transition: var(--transition-smooth);
+        }
+
+        .tech-badge:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .internship-cert-box {
+            margin-top: 20px;
+            background: linear-gradient(135deg, rgba(14, 22, 38, 0.9), rgba(19, 30, 51, 0.85));
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: var(--transition-smooth);
+        }
+
+        .internship-cert-box:hover {
+            border-color: rgba(56, 189, 248, 0.6);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+        }
+
+        .internship-cert-thumb-wrap {
+            width: 170px;
+            height: 115px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            background: #0B1120;
+        }
+
+        .internship-cert-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #080D1A;
+            padding: 4px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .internship-cert-thumb-wrap:hover .internship-cert-img {
+            transform: scale(1.05);
+        }
+
+        .internship-cert-thumb-wrap .cert-zoom-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(8, 13, 26, 0.75);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .internship-cert-thumb-wrap:hover .cert-zoom-overlay {
+            opacity: 1;
+        }
+
+        .internship-cert-meta {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .internship-cert-badge {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .internship-cert-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .internship-cert-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .cert-view-btn {
+            padding: 7px 16px;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        /* Project links row with live demo */
+        .project-links-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .project-demo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--accent-blue), #2563EB);
+            color: #FFFFFF;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        .project-demo-btn:hover {
+            background: linear-gradient(135deg, #1D4ED8, var(--accent-blue));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+            color: #FFFFFF;
+        }
+
         /* ===== PROJECTS ===== */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 24px;
             max-width: 1100px;
             margin: 0 auto 36px;
@@ -824,6 +1045,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
             margin-bottom: 18px;
         }
 
@@ -1905,6 +2128,23 @@
                 justify-content: center;
                 gap: 18px;
             }
+
+            .internship-cert-box {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px;
+                gap: 14px;
+            }
+
+            .internship-cert-thumb-wrap {
+                width: 100%;
+                height: 180px;
+            }
+
+            .cert-view-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         /* Small Mobile Phones (<= 480px) */
@@ -2014,6 +2254,10 @@
                 padding: 18px 14px;
             }
 
+            .internship-cert-thumb-wrap {
+                height: 155px;
+            }
+
             .resume-hero-card {
                 padding: 20px 16px;
             }
@@ -2033,6 +2277,27 @@
 
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .project-links-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .project-demo-btn {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .project-badge {
+                font-size: 10px;
+                padding: 2px 7px;
+            }
+
+            .project-title {
+                font-size: 17.5px;
             }
         }
 
@@ -2204,8 +2469,8 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">📜</div>
-                        <div class="stat-value">3+ Credentials</div>
-                        <div class="stat-label">Deloitte, Google, MongoDB</div>
+                        <div class="stat-value">4+ Credentials</div>
+                        <div class="stat-label">BUIMB, Deloitte, Google, MongoDB</div>
                     </div>
                 </div>
             </div>
@@ -2245,6 +2510,63 @@
                 <h2 class="section-title">Work <span class="accent">Experience</span></h2>
             </div>
             <div class="timeline">
+                <!-- BUIMB Research SDE Internship -->
+                <div class="timeline-item reveal">
+                    <h3 class="timeline-role">Software Development Engineer (SDE) Intern</h3>
+                    <div class="timeline-org">BUIMB RESEARCH, HALDWANI <span class="badge-period">1 JULY 2026 – 15 AUG 2026</span> <span class="badge-status-completed">✓ Successfully Completed</span></div>
+                    <p class="timeline-desc">I successfully completed my internship as a Software Development Engineer at BUIMB Research, Haldwani. During this internship, I worked on developing a WhatsApp CRM and messaging platform inspired by WATI, gaining practical experience in developing and integrating a real-world full-stack application.</p>
+
+                    <div class="timeline-details-block">
+                        <div class="timeline-details-title">Key Responsibilities &amp; Technical Contributions</div>
+                        <ul class="timeline-bullet-list">
+                            <li>Developed a full-featured WhatsApp CRM and messaging platform inspired by WATI.</li>
+                            <li>Implemented secure user authentication and authorization with role-based access control.</li>
+                            <li>Built contact and customer management functionality with structured tagging and segmentation.</li>
+                            <li>Developed real-time chat and multi-agent conversation management workflows.</li>
+                            <li>Implemented message templates and broadcast campaign functionality with status tracking.</li>
+                            <li>Integrated Meta WhatsApp Cloud API and handled WhatsApp Webhooks for bi-directional live communication.</li>
+                            <li>Developed robust backend RESTful APIs using Node.js and Express.js.</li>
+                            <li>Worked with React, Prisma ORM, and PostgreSQL for schema modeling and efficient data pipelines.</li>
+                            <li>Used Neon PostgreSQL for cloud database management, branching, and connection pooling.</li>
+                            <li>Implemented multi-user access and secure tenant data isolation.</li>
+                            <li>Deployed the application using Vercel with automated CI/CD builds.</li>
+                            <li>Improved responsive UI and overall user experience across both desktop and mobile devices.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-tech-badges">
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express.js</span>
+                        <span class="tech-badge">Prisma ORM</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">Neon</span>
+                        <span class="tech-badge">Meta WhatsApp Cloud API</span>
+                        <span class="tech-badge">Webhooks</span>
+                        <span class="tech-badge">Vercel</span>
+                    </div>
+
+                    <!-- Verified Certificate Preview Card -->
+                    <div class="internship-cert-box">
+                        <div class="internship-cert-thumb-wrap" onclick="openCertModal('buimb certificate.png', 'BUIMB Digital - SDE Internship Certificate')" role="button" tabindex="0" title="Click to enlarge BUIMB Internship Certificate">
+                            <img src="buimb certificate.png" alt="BUIMB Digital SDE Internship Certificate" loading="lazy" class="internship-cert-img">
+                            <div class="cert-zoom-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                <span>Enlarge</span>
+                            </div>
+                        </div>
+                        <div class="internship-cert-meta">
+                            <div class="internship-cert-badge">Official Credential</div>
+                            <h4 class="internship-cert-title">BUIMB Digital Internship Certificate</h4>
+                            <p class="internship-cert-desc">Issued by BUIMB Digital for Software Development Engineer (SDE) internship (1 July 2026 – 15 Aug 2026). Signed by CEO Akshat Singh Bisht and Manager Riya Gunwant.</p>
+                            <button type="button" class="btn btn-secondary cert-view-btn" onclick="openCertModal('buimb certificate.png', 'BUIMB Digital - SDE Internship Certificate')" aria-label="View Internship Certificate">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <span>View Internship Certificate</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="timeline-item reveal">
                     <h3 class="timeline-role">AI / ML Developer</h3>
                     <div class="timeline-org">GOOGLE STUDENT AMBASSADOR (GSA) <span class="badge-period">AUG 2025 - JAN 2026</span></div>
@@ -2269,6 +2591,52 @@
                 <p class="section-subtitle">A showcase of practical solutions built with AI, Machine Learning, and dynamic web technologies.</p>
             </div>
             <div class="projects-grid">
+                <!-- Project 1: WhatsApp Business API / CRM Platform -->
+                <div class="project-card reveal-stagger">
+                    <div class="project-header-row">
+                        <div class="project-icon">💬</div>
+                        <span class="project-badge">Full Stack &amp; Cloud API</span>
+                    </div>
+                    <h3 class="project-title">WhatsApp Business API / CRM Platform</h3>
+                    <p class="project-desc">A production-ready WhatsApp CRM and messaging platform inspired by WATI, developed during my SDE internship at BUIMB Research. Features Meta WhatsApp Cloud API integration, real-time incoming webhooks, message template management, broadcast campaigns, contact management, multi-user access control, and Neon PostgreSQL cloud database integration.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">React.js</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Express.js</span>
+                        <span class="project-tag">Prisma ORM</span>
+                        <span class="project-tag">PostgreSQL (Neon)</span>
+                        <span class="project-tag">Meta Cloud API</span>
+                        <span class="project-tag">Webhooks</span>
+                        <span class="project-tag">Vercel</span>
+                    </div>
+                    <div class="project-links-row">
+                        <a href="https://github.com/tanmaypande/whatsapp-business-api" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span class="arrow">&rarr;</span></a>
+                        <a href="https://waticlone.vercel.app" class="project-demo-btn" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Pharmacy Management System -->
+                <div class="project-card reveal-stagger">
+                    <div class="project-header-row">
+                        <div class="project-icon">💊</div>
+                        <span class="project-badge">3-Tier Desktop &amp; API</span>
+                    </div>
+                    <h3 class="project-title">Pharmacy Management System</h3>
+                    <p class="project-desc">A modular desktop application built with a decoupled 3-tier architecture. A responsive CustomTkinter UI acts as the presentation tier, communicating strictly through an HTTP client to a dedicated FastAPI service layer and repository pattern over PostgreSQL 18 with SQLAlchemy and Alembic. The UI does not communicate directly with the database, ensuring strict business logic encapsulation and security.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">CustomTkinter</span>
+                        <span class="project-tag">SQLAlchemy</span>
+                        <span class="project-tag">PostgreSQL 18</span>
+                        <span class="project-tag">Alembic</span>
+                        <span class="project-tag">Pandas</span>
+                    </div>
+                    <div class="project-links-row">
+                        <a href="https://github.com/tanmaypande/PHARMacy-management-system" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub <span class="arrow">&rarr;</span></a>
+                    </div>
+                </div>
+
                 <div class="project-card reveal-stagger">
                     <div class="project-header-row">
                         <div class="project-icon">📊</div>
@@ -2281,7 +2649,9 @@
                         <span class="project-tag">HTML/CSS</span>
                         <span class="project-tag">Budget Analytics</span>
                     </div>
-                    <a href="https://github.com/tanmaypande/EXPENSE_TRACKER_" class="project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub <span class="arrow">&rarr;</span></a>
+                    <div class="project-links-row">
+                        <a href="https://github.com/tanmaypande/EXPENSE_TRACKER_" class="project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub <span class="arrow">&rarr;</span></a>
+                    </div>
                 </div>
 
                 <div class="project-card reveal-stagger">
@@ -2296,7 +2666,9 @@
                         <span class="project-tag">Flask</span>
                         <span class="project-tag">Auth &amp; Sessions</span>
                     </div>
-                    <a href="https://github.com/tanmaypande/login-logout-flask" class="project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub <span class="arrow">&rarr;</span></a>
+                    <div class="project-links-row">
+                        <a href="https://github.com/tanmaypande/login-logout-flask" class="project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub <span class="arrow">&rarr;</span></a>
+                    </div>
                 </div>
 
                 <div class="project-card reveal-stagger">
@@ -2311,7 +2683,9 @@
                         <span class="project-tag">Modern CSS</span>
                         <span class="project-tag">Responsive UX</span>
                     </div>
-                    <a href="https://github.com/tanmaypande/MIINE_PORTFOLIO" class="project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub <span class="arrow">&rarr;</span></a>
+                    <div class="project-links-row">
+                        <a href="https://github.com/tanmaypande/MIINE_PORTFOLIO" class="project-link" target="_blank" rel="noopener noreferrer">View Project on GitHub <span class="arrow">&rarr;</span></a>
+                    </div>
                 </div>
             </div>
 
@@ -2345,8 +2719,8 @@
                                 <div class="resume-badge-status">
                                     <span>●</span> Updated Official Resume
                                 </div>
-                                <h3 class="resume-card-title">Tanmay Pandey — AI/ML &amp; Web Resume</h3>
-                                <p class="resume-card-sub">B.Tech CSE • Google Student Ambassador (GSA) • Deloitte &amp; MongoDB Certified • Full-Stack Developer</p>
+                                <h3 class="resume-card-title">Tanmay Pandey — Full-Stack &amp; AI/ML Resume</h3>
+                                <p class="resume-card-sub">B.Tech CSE • SDE Intern (BUIMB Research) • Google Student Ambassador Alumni (GSA) • Verified Full-Stack Engineer</p>
                             </div>
                         </div>
                         <div class="resume-card-actions">
@@ -2395,7 +2769,8 @@
                             <div class="skills-pill-group">
                                 <div class="skill-badge"><span class="skill-dot"></span>JavaScript (ES6+)</div>
                                 <div class="skill-badge"><span class="skill-dot"></span>React.js</div>
-                                <div class="skill-badge"><span class="skill-dot"></span>Flask (Python)</div>
+                                <div class="skill-badge"><span class="skill-dot"></span>Node.js &amp; Express</div>
+                                <div class="skill-badge"><span class="skill-dot"></span>FastAPI &amp; Flask</div>
                                 <div class="skill-badge"><span class="skill-dot"></span>HTML5 &amp; CSS3</div>
                                 <div class="skill-badge"><span class="skill-dot"></span>Responsive UI/UX</div>
                             </div>
@@ -2408,11 +2783,12 @@
                                 <span>Databases &amp; Developer Tools</span>
                             </div>
                             <div class="skills-pill-group">
-                                <div class="skill-badge"><span class="skill-dot"></span>SQL</div>
+                                <div class="skill-badge"><span class="skill-dot"></span>PostgreSQL &amp; Neon</div>
+                                <div class="skill-badge"><span class="skill-dot"></span>Prisma ORM</div>
                                 <div class="skill-badge"><span class="skill-dot"></span>MongoDB (NoSQL)</div>
                                 <div class="skill-badge"><span class="skill-dot"></span>Git &amp; GitHub</div>
-                                <div class="skill-badge"><span class="skill-dot"></span>VS Code</div>
-                                <div class="skill-badge"><span class="skill-dot"></span>REST APIs</div>
+                                <div class="skill-badge"><span class="skill-dot"></span>Meta API &amp; Webhooks</div>
+                                <div class="skill-badge"><span class="skill-dot"></span>REST APIs &amp; Vercel</div>
                             </div>
                         </div>
                     </div>
@@ -2430,6 +2806,29 @@
                 <p class="section-subtitle">Click any credential thumbnail to view the full verified certificate.</p>
             </div>
             <div class="certs-grid">
+                <!-- BUIMB Digital Internship Certificate -->
+                <div class="cert-card reveal">
+                    <div class="cert-image" onclick="openCertModal('buimb certificate.png', 'BUIMB Digital - SDE Internship Certificate')" title="Click to enlarge BUIMB Internship certificate">
+                        <img src="buimb certificate.png" alt="BUIMB Digital SDE Internship Certificate" loading="lazy">
+                        <div class="cert-zoom-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                            <span>Click to enlarge</span>
+                        </div>
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-badge-row">
+                            <span class="cert-issuer-badge">BUIMB Digital</span>
+                            <span class="cert-verified">✓ Verified SDE Internship</span>
+                        </div>
+                        <h3 class="cert-title">SOFTWARE DEVELOPMENT ENGINEER (SDE) INTERN</h3>
+                        <p class="cert-desc">Awarded by BUIMB Digital for successfully completing the Software Development Engineer (SDE) internship at BUIMB Research, Haldwani (1 July 2026 – 15 August 2026). Recognized for architecting a production WhatsApp CRM platform inspired by WATI, integrating Meta WhatsApp Cloud API, Webhooks, Node.js, Express, Prisma ORM, and cloud PostgreSQL.</p>
+                        <ul class="cert-list">
+                            <li>Built complete WhatsApp CRM with multi-user access, contact management, and broadcast templates</li>
+                            <li>Engineered real-time webhook ingestion and cloud database persistence with Neon PostgreSQL</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <!-- Deloitte Certificate -->
                 <div class="cert-card reveal">
                     <div class="cert-image" onclick="openCertModal('deloitte certificate.png', 'Deloitte - Technology Job Simulation')" title="Click to enlarge certificate">
