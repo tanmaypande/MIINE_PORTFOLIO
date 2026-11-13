@@ -21,7 +21,6 @@ I am an aspiring AI/ML Engineer and Web Developer passionate about building inte
 ## 🔹 Tech Stack
 - HTML
 - CSS
-- (Add JS if used)
 
 ---
 
