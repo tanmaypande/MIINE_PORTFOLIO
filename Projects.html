@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080D1A">
     <title>Projects Archive | Tanmay Pandey</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -14,18 +15,77 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Anti-Flash Theme Initializer (Apple Dual Theme System) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('portfolio-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+                var metaTheme = document.querySelector('meta[name="theme-color"]');
+                if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#FBFBFD' : '#080D1A');
+            } catch(e) {}
+        })();
+    </script>
+
 <style>
-    /* ===== RESET & BASE ===== */
+    /* ===== RESET & ROOT VARIABLES ===== */
     *, *::before, *::after {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
+    :root, [data-theme="dark"] {
+        --bg-main: #080D1A;
+        --bg-secondary: #0E1626;
+        --bg-card: #131E33;
+        --text-primary: #F8FAFC;
+        --text-secondary: #94A3B8;
+        --text-muted: #64748B;
+        --accent-blue: #3B82F6;
+        --accent-cyan: #38BDF8;
+        --border-color: #1F2D44;
+        --border-subtle: rgba(31, 45, 68, 0.6);
+        --grid-line: rgba(59, 130, 246, 0.04);
+        --table-row-hover: rgba(59, 130, 246, 0.06);
+        --shadow-table: 0 12px 35px rgba(0, 0, 0, 0.35);
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 16px;
+    }
+
+    [data-theme="light"] {
+        --bg-main: #FBFBFD;
+        --bg-secondary: #F5F5F7;
+        --bg-card: #FFFFFF;
+        --text-primary: #1D1D1F;
+        --text-secondary: #475569;
+        --text-muted: #64748B;
+        --accent-blue: #0071E3;
+        --accent-cyan: #0284C7;
+        --border-color: #E2E8F0;
+        --border-subtle: #EDF2F7;
+        --grid-line: rgba(0, 113, 227, 0.035);
+        --table-row-hover: #F8FAFC;
+        --shadow-table: 0 4px 20px rgba(0, 0, 0, 0.05);
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 16px;
+    }
+
+    html.theme-transitioning,
+    html.theme-transitioning *,
+    html.theme-transitioning *::before,
+    html.theme-transitioning *::after {
+        transition: background-color 0.35s ease, border-color 0.35s ease, color 0.3s ease, box-shadow 0.35s ease !important;
+    }
+
     body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background-color: #080D1A;
-        color: #F8FAFC;
+        background-color: var(--bg-main);
+        color: var(--text-primary);
         min-height: 100vh;
         overflow-x: hidden;
         line-height: 1.6;
@@ -35,7 +95,6 @@
         position: relative;
     }
 
-    /* Background grid */
     body::before {
         content: "";
         position: fixed;
@@ -44,8 +103,8 @@
         width: 100%;
         height: 100%;
         background-image:
-            linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+            linear-gradient(var(--grid-line) 1px, transparent 1px),
+            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
         background-size: 46px 46px;
         z-index: 0;
         pointer-events: none;
@@ -60,27 +119,76 @@
 
     .back-nav {
         margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .back-link {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        color: #38BDF8;
+        color: var(--accent-cyan);
         text-decoration: none;
         font-size: 14px;
         font-weight: 600;
         padding: 8px 16px;
-        background: rgba(19, 30, 51, 0.8);
-        border: 1px solid rgba(59, 130, 246, 0.3);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
         border-radius: 10px;
         transition: all 0.25s ease;
     }
 
     .back-link:hover {
-        background: rgba(59, 130, 246, 0.15);
-        border-color: #38BDF8;
+        background: rgba(59, 130, 246, 0.12);
+        border-color: var(--accent-cyan);
         transform: translateX(-3px);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 0;
+    }
+
+    .theme-toggle-btn:hover {
+        border-color: var(--accent-cyan);
+        color: var(--accent-cyan);
+        transform: translateY(-1px) rotate(15deg);
+    }
+
+    .theme-icon-sun, .theme-icon-moon {
+        width: 19px;
+        height: 19px;
+        transition: transform 0.35s ease, opacity 0.3s ease;
+    }
+
+    [data-theme="dark"] .theme-icon-sun {
+        display: block;
+        color: #FBBF24;
+    }
+
+    [data-theme="dark"] .theme-icon-moon {
+        display: none;
+    }
+
+    [data-theme="light"] .theme-icon-sun {
+        display: none;
+    }
+
+    [data-theme="light"] .theme-icon-moon {
+        display: block;
+        color: #0071E3;
     }
 
     /* ===== HEADING ===== */
@@ -89,13 +197,13 @@
         font-size: clamp(2.2rem, 4.5vw, 3rem);
         font-weight: 700;
         margin-bottom: 14px;
-        color: #F8FAFC;
+        color: var(--text-primary);
         letter-spacing: -0.5px;
     }
 
     h1 .accent {
-        color: #38BDF8;
-        background: linear-gradient(135deg, #38BDF8, #60A5FA);
+        color: var(--accent-cyan);
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -103,7 +211,7 @@
 
     .subtitle {
         font-weight: 400;
-        color: #94A3B8;
+        color: var(--text-secondary);
         margin-bottom: 40px;
         max-width: 740px;
         font-size: 16px;
@@ -115,15 +223,15 @@
         width: 100%;
         border-collapse: separate;
         border-spacing: 0;
-        background: #131E33;
+        background: var(--bg-card);
         border-radius: 16px;
         overflow: hidden;
-        border: 1px solid #1F2D44;
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-table);
     }
 
     thead {
-        background: #0E1626;
+        background: var(--bg-secondary);
     }
 
     th {
@@ -131,17 +239,17 @@
         text-align: left;
         font-weight: 600;
         font-size: 13px;
-        color: #94A3B8;
+        color: var(--text-secondary);
         text-transform: uppercase;
         letter-spacing: 1px;
-        border-bottom: 1px solid #1F2D44;
+        border-bottom: 1px solid var(--border-color);
     }
 
     td {
         padding: 20px 24px;
-        border-bottom: 1px solid rgba(31, 45, 68, 0.6);
+        border-bottom: 1px solid var(--border-subtle);
         font-size: 15px;
-        color: #94A3B8;
+        color: var(--text-secondary);
         vertical-align: middle;
     }
 
@@ -154,11 +262,11 @@
     }
 
     tbody tr:hover {
-        background: rgba(59, 130, 246, 0.06);
+        background: var(--table-row-hover);
     }
 
     td:first-child {
-        color: #F8FAFC;
+        color: var(--text-primary);
         font-weight: 600;
         font-family: 'Space Grotesk', sans-serif;
     }
@@ -235,15 +343,15 @@
         }
 
         tr {
-            background: #131E33;
+            background: var(--bg-card);
             border-radius: 14px;
             padding: 20px;
-            border: 1px solid #1F2D44;
+            border: 1px solid var(--border-color);
             transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
         tr:hover {
-            border-color: rgba(59, 130, 246, 0.4);
+            border-color: var(--accent-cyan);
             transform: translateY(-2px);
         }
 
@@ -256,7 +364,7 @@
             font-weight: 600;
             display: block;
             margin-bottom: 4px;
-            color: #38BDF8;
+            color: var(--accent-cyan);
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -281,6 +389,10 @@
             <a href="index.html" class="back-link">
                 <span>&larr;</span> Back to Portfolio
             </a>
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle light or dark theme" title="Switch Theme">
+                <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
         </div>
         <h1>PROJECTS <span class="accent">ARCHIVE</span></h1>
         <p class="subtitle">These are the projects I have developed, showcasing my capabilities in Artificial Intelligence, Machine Learning, and Web Engineering. Each project reflects my drive to solve practical problems and build scalable, user-centric tools.</p>
@@ -331,5 +443,39 @@
         </tbody>
         </table>
     </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+
+        function setTheme(theme) {
+            document.documentElement.classList.add('theme-transitioning');
+            document.documentElement.setAttribute('data-theme', theme);
+            try {
+                localStorage.setItem('portfolio-theme', theme);
+            } catch(e) {}
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#FBFBFD' : '#080D1A');
+
+            setTimeout(() => {
+                document.documentElement.classList.remove('theme-transitioning');
+            }, 350);
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+                setTheme(nextTheme);
+            });
+        }
+
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                if (!localStorage.getItem('portfolio-theme')) {
+                    setTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
