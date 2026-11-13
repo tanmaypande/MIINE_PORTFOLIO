@@ -32,7 +32,7 @@ I am an aspiring AI/ML Engineer and Web Developer passionate about building inte
 ---
 
 ## 🔹 Live Demo
-👉 https://tanmayyyportfolio.netlify.app/
+👉 https://tanmaypandey.vercel.app/
 
 ---
 
